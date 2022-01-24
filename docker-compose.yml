@@ -1,0 +1,35 @@
+networks:
+  wpnet: 
+services:
+  mysql:
+    container_name: MySQL
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wpuser
+      MYSQL_PASSWORD: wpuser123
+    image: mysql:5.6
+    networks:
+      wpnet: null
+    restart: always
+    volumes:
+      - mysql-vol:/var/lib/mysql:rw
+  wordpress:
+    container_name: WORDPRESS
+    environment:
+      WORDPRESS_DB_HOST: MySQL
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_PASSWORD: wpuser123
+      WORDPRESS_DB_USER: wpuser
+    image: wordpress:latest
+    networks:
+      wpnet: null
+    ports:
+      - "8080:8080"
+    restart: always
+    volumes:
+      - wordpress-vol:/var/www/html
+version: '3'
+volumes:
+  mysql-vol: 
+  wordpress-vol: 
