@@ -1,4 +1,4 @@
 README FILE.
 I am the Father of Code programme
-And I am Rich , I dont need any JOb you Shithole...................................
-
+Basically what this code is doing is nothing, Please you guys relax and spent some wonderful time with your family.
+Family is everything, if you have money also í ½í¸‚
